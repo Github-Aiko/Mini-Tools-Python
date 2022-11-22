@@ -21,10 +21,11 @@ def speak(text):
     tts.save(filename)
     playsound.playsound(filename)
 
-with sr.Microphone() as source:
+while True:
+    with sr.Microphone() as source:
     # read the audio data from the default
     # Until not receiving the signal
-    audio_data = r.record(source, duration=5)
+        audio_data = r.record(source, duration=5)
     print("Recognizing...")
     # convert speech to text
     try:
@@ -41,6 +42,13 @@ with sr.Microphone() as source:
         speak(aiko_bot)
     elif text == "I'm fine":
         aiko_bot = "That's great, I'm fine too"
+        speak(aiko_bot)
+    elif text == "goodbye" or text == "see you later" or text == "bye":
+        aiko_bot = "Goodbye, see you later"
+        speak(aiko_bot)
+        break
+    else:
+        aiko_bot = "Sorry, I don't understand what you say"
         speak(aiko_bot)
     
 savefile(text)
