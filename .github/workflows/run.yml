@@ -2,12 +2,11 @@ name: Run
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    tags:
+       - 'v*'
 
 jobs:
-  linux:
+  build:
     runs-on: ubuntu-latest
     # install python
     steps:
