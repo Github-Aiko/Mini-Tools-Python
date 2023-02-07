@@ -4,7 +4,7 @@ def clear():
 	os.system('cls' if os.name == 'nt' else 'clear')
 
 def ai():
-	print("Chọn tỉ lệ điểm (Chuyên cần - Giữa kì - Cuối kì): % ")
+	print("Chọn tỉ lệ điểm (Chuyên cần - Giữa kì - Cuối kì)")
 	print("1. 10% - 30% - 60%")
 	print("2. 10% - 40% - 50%")
 	print("3. 10% - 20% - 70%")
